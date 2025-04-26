@@ -1,0 +1,21 @@
+# Node.js dependencies
+node_modules/
+
+# Compiled output
+dist/
+
+# Logs
+logs/
+*.log
+
+# Environment variables
+.env
+
+# Test coverage
+coverage/
+
+# Temporary files
+*.tmp
+
+# Output directories
+compressed-images/

@@ -1,0 +1,29 @@
+{
+  "name": "tiny-pic",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.797.0",
+    "@types/node": "^22.15.2",
+    "commander": "^13.1.0",
+    "dotenv": "^16.5.0",
+    "sharp": "^0.34.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  },
+  "bin": {
+    "tiny-pic": "./src/index.ts"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.3.2"
+  }
+}
