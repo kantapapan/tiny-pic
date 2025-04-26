@@ -1,6 +1,12 @@
 # tiny-pic
 
-TypeScript ベースの CLI アプリケーションです。このアプリケーションは、簡単な "Hello, CLI World!" メッセージを出力します。
+tiny-pic は、画像を圧縮し、AWS S3 にアップロードするための TypeScript ベースの CLI ツールです。このツールは、画像のサイズを効率的に削減し、クラウドストレージに簡単に保存できるように設計されています。
+
+## 主な機能
+
+- PNG 画像の圧縮
+- 圧縮画像の AWS S3 へのアップロード
+- 圧縮率やアップロード結果のレポート
 
 ## インストール
 
@@ -12,22 +18,58 @@ npm install
 
 ## 使用方法
 
-以下のコマンドで CLI を実行できます：
+### 画像の圧縮
+
+以下のコマンドで指定したディレクトリ内の PNG 画像を圧縮できます：
 
 ```bash
-npx tiny-pic
+npx tiny-pic compress --input <入力ディレクトリ> --output <出力ディレクトリ>
 ```
 
-または、以下の手順でグローバルにインストールして使用することもできます：
+例：
 
 ```bash
-npm install -g .
-tiny-pic
+npx tiny-pic compress --input ./images --output ./compressed-images
+```
+
+### 圧縮画像の S3 アップロード
+
+以下のコマンドで圧縮された画像を AWS S3 にアップロードできます：
+
+```bash
+npx tiny-pic upload --input <圧縮画像ディレクトリ>
+```
+
+例：
+
+```bash
+npx tiny-pic upload --input ./compressed-images
+```
+
+## 環境変数の設定
+
+AWS S3 にアップロードするためには、以下の環境変数を `.env` ファイルに設定する必要があります：
+
+```
+AWS_ACCESS_KEY_ID=<あなたのAWSアクセスキー>
+AWS_SECRET_ACCESS_KEY=<あなたのAWSシークレットキー>
+AWS_REGION=<S3のリージョン>
+AWS_BUCKET_NAME=<S3のバケット名>
 ```
 
 ## 開発
 
-TypeScript ファイルをコンパイルするには、以下のコマンドを使用してください：
+### テストの実行
+
+以下のコマンドでテストを実行できます：
+
+```bash
+npx jest
+```
+
+### TypeScript ファイルのコンパイル
+
+以下のコマンドを使用してください：
 
 ```bash
 npx tsc
