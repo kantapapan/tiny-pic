@@ -2,6 +2,7 @@
 
 import { Command } from 'commander';
 import { registerCompressCommand } from './interfaces/cli/commands/compress';
+import { registerUploadCommand } from './interfaces/cli/commands/upload';
 import { logger } from './interfaces/utils/logger';
 
 // CLIプログラムの初期化
@@ -14,6 +15,7 @@ program
 
 // コマンドの登録
 registerCompressCommand(program);
+registerUploadCommand(program);
 
 // エラーハンドリングの設定
 program.exitOverride((err) => {
