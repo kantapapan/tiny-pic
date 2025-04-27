@@ -52,8 +52,8 @@ export const loadConfig = async (): Promise<AppConfig> => {
       accessKeyId: getEnvOrThrow('AWS_ACCESS_KEY_ID'),
       secretAccessKey: getEnvOrThrow('AWS_SECRET_ACCESS_KEY'),
       region: getEnvOrThrow('AWS_REGION'),
-      bucketName: getEnvOrThrow('S3_BUCKET_NAME'),
-      uploadPrefix: getEnvOrDefault('S3_UPLOAD_PREFIX', 'images/')
+      bucketName: getEnvOrThrow('AWS_BUCKET_NAME'),
+      uploadPrefix: getEnvOrDefault('AWS_UPLOAD_PREFIX', 'images/')
     };
   } catch (error) {
     console.warn(`AWS設定の読み込みに失敗しました: ${error}`);
