@@ -1,14 +1,36 @@
 # tiny-pic
 
-tiny-pic は、画像を圧縮し、AWS S3 にアップロードするための TypeScript ベースの CLI ツールです。このツールは、画像のサイズを効率的に削減し、クラウドストレージに簡単に保存できるように設計されています。
+[![Node.js Version](https://img.shields.io/badge/node-v22.15.2-blue.svg)](https://nodejs.org/)
+[![TypeScript Version](https://img.shields.io/badge/typescript-v5.8.3-blue.svg)](https://www.typescriptlang.org/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Tests](https://img.shields.io/badge/tests-passing-brightgreen.svg)](https://github.com/kantapapan/tiny-pic/actions)
 
-## 主な機能
+<div align="center">
+  <img src="docs/images/logo.png" alt="tiny-pic logo" width="200"/>
+  <p><em>高速・高品質な画像圧縮とS3アップロードを実現するCLIツール</em></p>
+</div>
 
-- PNG 画像の高効率圧縮
-- 圧縮画像の AWS S3 へのアップロード
-- 詳細な圧縮率やアップロード結果のレポート
+## 🚀 特徴
 
-## 必要条件
+- ⚡️ **高速圧縮**: `sharp`ライブラリによる最適化された画像圧縮
+- 🎯 **高品質**: 画質を維持しながら最大70%のサイズ削減
+- 🔒 **セキュア**: AWS認証情報の安全な管理
+- 📦 **使いやすい**: シンプルなCLIインターフェース
+- 🧪 **テスト済み**: 包括的なユニットテストと統合テスト
+
+## 🛠 技術スタック
+
+- **ランタイム**: Node.js v22.15.2
+- **言語**: TypeScript v5.8.3
+- **主要ライブラリ**:
+  - `sharp`: 画像処理
+  - `@aws-sdk/client-s3`: AWS S3操作
+  - `commander`: CLI構築
+  - `dotenv`: 環境変数管理
+- **テスト**: Jest
+- **ビルドツール**: TypeScript Compiler
+
+## 📋 必要条件
 
 ### 環境変数の設定（必須）
 
@@ -24,15 +46,27 @@ AWS_UPLOAD_PREFIX=<アップロード先のプレフィックス>（オプショ
 
 > ⚠️ 注意: 環境変数が設定されていない場合、S3アップロード機能は動作しません。
 
-## インストール
+## 🚀 クイックスタート
 
-以下のコマンドを実行して依存関係をインストールしてください：
+### インストール
 
 ```bash
 npm install
 ```
 
-## 使用方法
+### 基本的な使い方
+
+1. 画像の圧縮:
+```bash
+npx tiny-pic compress --input ./images --output ./compressed-images
+```
+
+2. S3へのアップロード:
+```bash
+npx tiny-pic upload --input ./compressed-images
+```
+
+## 📖 詳細な使用方法
 
 ### 画像の圧縮
 
@@ -40,12 +74,6 @@ npm install
 
 ```bash
 npx tiny-pic compress --input <入力ディレクトリ> --output <出力ディレクトリ>
-```
-
-例：
-
-```bash
-npx tiny-pic compress --input ./images --output ./compressed-images
 ```
 
 #### 圧縮仕様
@@ -86,12 +114,6 @@ npx tiny-pic compress --input ./images --output ./compressed-images
 npx tiny-pic upload --input <圧縮画像ディレクトリ>
 ```
 
-例：
-
-```bash
-npx tiny-pic upload --input ./compressed-images
-```
-
 #### アップロードオプション
 
 - `-i, --input <directory>`: 入力ディレクトリのパス（デフォルト: ./compressed-images）
@@ -112,7 +134,13 @@ npx tiny-pic compress --help
 npx tiny-pic upload --help
 ```
 
-## 開発
+## 🧪 開発
+
+### テストの実行
+
+```bash
+npm test
+```
 
 ### 直接実行
 
@@ -122,22 +150,25 @@ npx tiny-pic upload --help
 npx ts-node ./src/index.ts [コマンド] [オプション]
 ```
 
-### テストの実行
-
-以下のコマンドでテストを実行できます：
-
-```bash
-npx jest
-```
-
 ### TypeScript ファイルのコンパイル
 
-以下のコマンドを使用してください：
-
 ```bash
-npx tsc
+npm run build
 ```
 
-## ライセンス
+## 📝 ライセンス
 
 このプロジェクトは [MIT ライセンス](LICENSE) の下で提供されています。
+
+## 🤝 コントリビューション
+
+1. このリポジトリをフォーク
+2. 新しいブランチを作成 (`git checkout -b feature/amazing-feature`)
+3. 変更をコミット (`git commit -m 'Add some amazing feature'`)
+4. ブランチにプッシュ (`git push origin feature/amazing-feature`)
+5. プルリクエストを作成
+
+## 📫 お問い合わせ
+
+- 問題報告: [GitHub Issues](https://github.com/kantapapan/tiny-pic/issues)
+- 機能リクエスト: [GitHub Discussions](https://github.com/kantapapan/tiny-pic/discussions)
