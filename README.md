@@ -6,7 +6,6 @@
 [![Tests](https://img.shields.io/badge/tests-passing-brightgreen.svg)](https://github.com/kantapapan/tiny-pic/actions)
 
 <div align="center">
-  <img src="docs/images/logo.png" alt="tiny-pic logo" width="200"/>
   <p><em>高速・高品質な画像圧縮とS3アップロードを実現するCLIツール</em></p>
 </div>
 
@@ -167,8 +166,3 @@ npm run build
 3. 変更をコミット (`git commit -m 'Add some amazing feature'`)
 4. ブランチにプッシュ (`git push origin feature/amazing-feature`)
 5. プルリクエストを作成
-
-## 📫 お問い合わせ
-
-- 問題報告: [GitHub Issues](https://github.com/kantapapan/tiny-pic/issues)
-- 機能リクエスト: [GitHub Discussions](https://github.com/kantapapan/tiny-pic/discussions)
